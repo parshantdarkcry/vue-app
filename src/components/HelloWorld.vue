@@ -1,162 +1,176 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br />
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
-      >.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
-          target="_blank"
-          rel="noopener"
-          >babel</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa"
-          target="_blank"
-          rel="noopener"
-          >pwa</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router"
-          target="_blank"
-          rel="noopener"
-          >router</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex"
-          target="_blank"
-          rel="noopener"
-          >vuex</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-          target="_blank"
-          rel="noopener"
-          >eslint</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest"
-          target="_blank"
-          rel="noopener"
-          >unit-jest</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-cypress"
-          target="_blank"
-          rel="noopener"
-          >e2e-cypress</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript"
-          target="_blank"
-          rel="noopener"
-          >typescript</a
-        >
-      </li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li>
-        <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
-      </li>
-      <li>
-        <a href="https://forum.vuejs.org" target="_blank" rel="noopener"
-          >Forum</a
-        >
-      </li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank" rel="noopener"
-          >Community Chat</a
-        >
-      </li>
-      <li>
-        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener"
-          >Twitter</a
-        >
-      </li>
-      <li>
-        <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
-      </li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li>
-        <a href="https://router.vuejs.org" target="_blank" rel="noopener"
-          >vue-router</a
-        >
-      </li>
-      <li>
-        <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-devtools#vue-devtools"
-          target="_blank"
-          rel="noopener"
-          >vue-devtools</a
-        >
-      </li>
-      <li>
-        <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener"
-          >vue-loader</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-          rel="noopener"
-          >awesome-vue</a
-        >
-      </li>
-    </ul>
-  </div>
+    <div class="hello">
+        <h3>{{ msg }}</h3>
+        <div class="frame">
+            <div class="human">
+                <div class="face"></div>
+                <div class="hands">
+                    <div class="hand hand-left"><div class="hand"></div></div>
+                    <div class="hand hand-right"><div class="hand"></div></div>
+                </div>
+                <div class="body"></div>
+                <div class="bottom">
+                    <div class="leg left-left"></div>
+                    <div class="leg left-right"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class HelloWorld extends Vue {
-  @Prop() private msg!: string;
+    @Prop() private msg!: string;
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
+.hello {
+    padding: 20px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+// use only the available space inside the 400x400 frame
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 300px;
+    margin-top: -100px;
+    margin-left: -100px;
+    margin-bottom: -100px;
+    margin-right: -100px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #8e44ad;
+    display: grid;
+    place-items: center;
+
+    .human {
+        position: relative;
+
+        .face {
+            width: 40px;
+            height: 40px;
+            background: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -250%);
+            border-radius: 50%;
+        }
+        .hand {
+            height: 60px;
+            width: 15px;
+            background: white;
+            border-radius: 10px;
+        }
+        .hand-left {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: 0 0;
+            transform: translate(-200%, -85%) rotate(14deg);
+
+            div {
+                height: 50px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform-origin: 0 0;
+                transform: translate(-58%, 30%) rotate(-7deg);
+            }
+        }
+        .hand-right {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: 0 0;
+            transform: translate(110%, -62%) rotate(-70deg);
+            animation-name: hand-right-up;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-fill-mode: alternate-reverse;
+
+            div {
+                height: 50px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform-origin: 0 0;
+                transform: translate(-25%, 60%) rotate(-90deg);
+                animation-name: handUp;
+                animation-duration: 2s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+        }
+        .body {
+            width: 57.5px;
+            height: 100px;
+            background: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px 5px 0px 0px;
+        }
+        .bottom {
+            width: 56px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 30%);
+
+            .leg {
+                position: absolute;
+                top: 0%;
+                left: 50%;
+                transform: translate(-50%, 0%);
+                width: 48.5%;
+                height: 100%;
+                background: white;
+                border-radius: 0px 0px 20px 20px;
+            }
+            .left-left {
+                transform: translate(-106%, 0%);
+            }
+            .left-right {
+                transform: translate(8%, 0%);
+            }
+        }
+    }
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+@keyframes hand-right-up {
+    0%,
+    100% {
+        transform: translate(110%, -62%) rotate(-70deg);
+    }
+    50% {
+        transform: translate(90%, -60%) rotate(-90deg);
+    }
 }
-a {
-  color: #42b983;
+@keyframes handUp {
+    0%,
+    100% {
+        transform: translate(-25%, 60%) rotate(-90deg);
+    }
+    50% {
+        transform: translate(-30%, 65%) rotate(-120deg);
+    }
 }
 </style>
